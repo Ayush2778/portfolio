@@ -3,294 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayush Portfolio</title>
+    <title>Ayush's Portfolio</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #181818;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
             color: #f0f0f0;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #ff7e5f;
-            color: white;
-            padding: 20px 50px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        header .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        header nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        header nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        header nav a:hover {
-            color: #feb47b;
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Main Container */
-        .container {
-            margin-top: 80px;
-            padding: 40px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Intro Section */
-        .intro {
             text-align: center;
-            margin-bottom: 40px;
         }
 
-        .intro img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            border: 3px solid #ff7e5f;
-        }
-
-        .intro h1 {
-            color: #ff7e5f;
-            font-size: 2.5rem;
-        }
-
-        .intro p {
-            font-size: 1.2rem;
-            color: #b0b0b0;
-        }
-
-        .intro .btn {
-            display: inline-block;
-            background-color: #ff7e5f;
-            padding: 12px 25px;
+        /* ✨ Stylish Animated Header */
+        header {
+            background: linear-gradient(90deg, #00c3ff, #0096c7);
             color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glow 2s infinite alternate;
+            border-radius: 8px;
+        }
+
+        /* 🔥 Glow Animation */
+        @keyframes glow {
+            from {
+                box-shadow: 0px 0px 10px #00c3ff;
+            }
+            to {
+                box-shadow: 0px 0px 20px #0096c7;
+            }
+        }
+
+        /* 📌 Responsive Container */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: #1a1a1a;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 195, 255, 0.2);
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        /* 🎯 Responsive Image */
+        .profile-img {
+            display: block;
+            margin: 10px auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00c3ff;
+        }
+
+        h2 {
+            color: #00c3ff;
+            font-size: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00c3ff;
+            color: #121212;
+            padding: 10px 20px;
+            text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
-            margin-top: 20px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            transition: background 0.3s ease;
         }
 
-        .intro .btn:hover {
-            background-color: #feb47b;
+        .btn:hover {
+            background: #0096c7;
         }
 
-        /* Sections */
+        /* 📌 Section Formatting */
         .section {
-            margin-bottom: 40px;
-            padding: 30px;
-            background-color: #222;
+            margin-top: 30px;
+            text-align: left;
+            padding: 20px;
+            background: #222;
+            border-left: 5px solid #00c3ff;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-        .section h2 {
-            color: #ff7e5f;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .section p {
-            font-size: 1.1rem;
-            color: #ddd;
-        }
-
-        .section ul {
+        /* 📌 List Formatting */
+        ul {
             list-style-type: none;
             padding-left: 0;
         }
 
-        .section ul li {
-            background-color: #333;
-            padding: 12px;
-            margin-bottom: 10px;
+        li {
+            background: #333;
+            padding: 10px;
+            margin: 5px 0;
             border-radius: 5px;
-            transition: 0.3s;
         }
 
-        .section ul li:hover {
-            background-color: #444;
-        }
-
-        .section a {
-            color: #ff7e5f;
-            text-decoration: none;
-        }
-
-        .section a:hover {
-            color: #feb47b;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1f2937;
-            color: #ff7e5f;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #ff7e5f;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            color: #feb47b;
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
+        /* 🌟 Mobile Optimization */
+        @media (max-width: 600px) {
             header {
-                flex-direction: column;
-                padding: 20px;
+                font-size: 24px;
+                padding: 15px;
             }
 
-            header nav {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            h2 {
+                font-size: 20px;
             }
 
             .container {
-                padding: 20px;
+                width: 95%;
+                padding: 15px;
             }
 
-            .intro h1 {
-                font-size: 2rem;
+            .section {
+                padding: 15px;
             }
+        }
 
-            .section h2 {
-                font-size: 1.5rem;
-            }
-
-            .section p, .section ul li {
-                font-size: 1rem;
-            }
+        footer {
+            background-color: #1f2937;
+            color: #00c3ff;
+            padding: 10px;
+            margin-top: 20px;
+            box-shadow: 0px -4px 8px rgba(0, 195, 255, 0.3);
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">Ayush Digital Portfolio</div>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#extra-curricular">Extra-Curricular</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
+    <header>Ayush's Portfolio</header>
+    
     <div class="container">
-        <!-- Intro Section -->
-        <section class="intro">
-            <img src="your-photo.jpg" alt="Your Photo">
-            <h1>Hello! I am Ayush</h1>
-            <p>A passionate engineer and innovator from <b>Pandit Deendayal Energy University</b>.</p>
-            <p>I specialize in Embedded Systems and IoT with a focus on creating impactful and efficient solutions. I thrive in challenges and always seek new ways to innovate through technology.</p>
-            <a href="Resume.pdf" target="_blank" class="btn">View My Resume</a>
-        </section>
+        <img src="your-photo.jpg" alt="Your Photo" class="profile-img">
+        <h2>Hello! I am Ayush</h2>
+        <p>A passionate engineer from <b>Pandit Deendayal Energy University</b>.</p>
+        <a href="Resume.pdf" target="_blank" class="btn">View My Resume</a>
 
-        <!-- About Me Section -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>With a strong foundation in technology, I have worked on several projects ranging from autonomous systems to IoT-based applications. I enjoy blending hardware and software to create intelligent solutions that can make a difference.</p>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section">
+        <div class="section">
             <h2>Education</h2>
             <p><b>Pandit Deendayal Energy University</b></p>
-            <p>Bachelor of Technology (B.Tech) - Engineering</p>
-        </section>
+            <p>B.Tech in Engineering</p>
+        </div>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2>Experience</h2>
-            <p><b>Sahana Systems Limited</b> (Internship)</p>
-            <p>Contributed to the development of embedded solutions and IoT-based systems during the internship period. Worked closely with senior engineers to enhance system efficiency.</p>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements" class="section">
-            <h2>Achievements</h2>
+        <div class="section">
+            <h2>Skills</h2>
             <ul>
-                <li>Winner of SIH 2024</li>
-                <li>Finalist of RoboFest 4.0</li>
-                <li>Participated in various hackathons and innovation contests</li>
+                <li>Embedded Systems & IoT</li>
+                <li>Arduino & Microcontrollers</li>
+                <li>Python & C Programming</li>
+                <li>Web Development (HTML, CSS)</li>
+                <li>Project Management</li>
             </ul>
-        </section>
+        </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
+        <div class="section">
             <h2>Projects</h2>
             <ul>
-                <li><b>Autonomous River Cleaning Robot</b> - A robot designed to clean river waste.</li>
-                <li><b>IoT-Based Health Monitoring</b> - A system to track health parameters.</li>
-                <li><b>Smart Attendance System</b> - RFID-based attendance system with buzzer alerts.</li>
-                <li><b>Milk Quality Assessment</b> - A system to analyze milk quality.</li>
+                <li><b>Autonomous River Cleaning Robot</b></li>
+                <li><b>IoT-Based Health Monitoring</b></li>
+                <li><b>Smart Attendance System</b></li>
+                <li><b>Milk Quality Assessment</b></li>
             </ul>
-        </section>
+        </div>
 
-        <!-- Extra-Curricular Activities Section -->
-        <section id="extra-curricular" class="section">
-            <h2>Extra-Curricular Activities</h2>
-            <ul>
-                <li>Volunteered for Radio Day</li>
-                <li>Active member of the college robotics club</li>
-                <li>Participated in community service initiatives</li>
-            </ul>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
+        <div class="section">
             <h2>Contact</h2>
-            <p>Email: <b>ayushdhruv1303@gmail.com</b></p>
-            <p>LinkedIn: <a href="http://www.linkedin.com/in/ayush-dhruv-447248264">linkedin.com/in/ayush</a></p>
+            <p>Email: <b>ayush@example.com</b></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/ayush" target="_blank">linkedin.com/in/ayush</a></p>
             <p>GitHub: <a href="https://github.com/ayush2778" target="_blank">github.com/ayush2778</a></p>
-        </section>
+        </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        &copy; 2025 Ayush | Portfolio | <a href="ayushdhruv1303@gmail.com">Email Me</a>
+        &copy; 2025 Ayush | Portfolio
     </footer>
 </body>
 </html>
